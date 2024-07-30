@@ -25,7 +25,8 @@ app.post('/upload', (req, res) => {
             return res.status(500).send('Error saving file');
         }
         // Devolver la URL pública del archivo
-        res.json({ url: `${req.protocol}://${req.get('host')}/public/${filename}` });
+        //res.json({ url: `${req.protocol}://${req.get('host')}/public/${filename}` });
+        res.json({ url: `https://${req.get('host')}/public/${filename}` });
     });
 });
 
